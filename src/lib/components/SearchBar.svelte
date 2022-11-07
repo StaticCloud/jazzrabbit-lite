@@ -7,6 +7,7 @@
         let response = await fetch(`https://itunes.apple.com/search?country=US&term=${query}&media=music&entity=album`);
         let { results } = await response.json();
         searchResults = results;
+        query = '';
         console.log(results);
     }
 </script>

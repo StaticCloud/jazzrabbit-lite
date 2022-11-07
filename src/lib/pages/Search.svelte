@@ -5,7 +5,7 @@
 
 <SearchBar bind:searchResults="{albumData}"/>
 {#if albumData}
-    {#each albumData.results as album}
-        <p>{album.collectionName}</p>
+    {#each albumData as album}
+        <img alt={album.collectionType} src={album.artworkUrl100.replace('100x100', '300x300')}/>
     {/each}
 {/if}
