@@ -3,7 +3,7 @@
 
   // pages
   import Home from './lib/pages/Home.svelte';
-  import Search from './lib/Search.svelte';
+  import Search from './lib/pages/Search.svelte';
   import Collection from './lib/pages/Collection.svelte';
   import Favorites from './lib/pages/Favorites.svelte';
   import NotFound from './lib/pages/NotFound.svelte';

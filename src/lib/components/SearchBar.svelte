@@ -1,13 +1,14 @@
 <script lang="ts">
-    let query;
+    export let searchResults;
+    let query: String;
 
     const getMusic = async () => {
         query = query.split(" ").join("+");
-        const response = await fetch(`https://itunes.apple.com/search?country=US&term=${query}&media=music&entity=album`);
-        const data = await response.json();
-        console.log(data);
+        let response = await fetch(`https://itunes.apple.com/search?country=US&term=${query}&media=music&entity=album`);
+        let { results } = await response.json();
+        searchResults = results;
+        console.log(results);
     }
-    
 </script>
 
 <div>
