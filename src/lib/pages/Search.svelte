@@ -4,6 +4,7 @@
     import Album from '../components/Album.svelte'
 </script>
 
+<h1>Search</h1>
 <SearchBar bind:searchResults="{albumData}"/>
 <div class="grid">
 {#if albumData}

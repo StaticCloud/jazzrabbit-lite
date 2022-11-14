@@ -26,7 +26,7 @@
         width: 31px;
         height: 31px;
 
-        color: rgb(214, 141, 73);
+        color: rgb(235, 159, 88);
         padding: 25px;
     }
 
