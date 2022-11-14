@@ -15,15 +15,20 @@
     '/': Home,
     '/search': Search,
     '/collection': Collection,
-    '/Favorites': Favorites,
+    '/favorites': Favorites,
     '*': NotFound,
   }
 </script>
 
 <main>
   <Nav/>
-  <Router {routes}/>
+  <section class="content-wrap">
+    <Router {routes}/>
+  </section>
 </main>
 
 <style>
+  .content-wrap {
+    padding-left: 90px;
+  }
 </style>
