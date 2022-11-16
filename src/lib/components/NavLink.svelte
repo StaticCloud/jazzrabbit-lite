@@ -1,9 +1,17 @@
-<script>
+<script lang="ts">
     import { link } from 'svelte-spa-router'
     export let href;
+    export let page;
+    export let currentPage;
+
+    let hovering;
 </script>
 
-<a href={href} use:link>
+<a href={href} 
+    class:active-page="{hovering === true}" 
+    class:current-page="{currentPage === page}"
+    on:mouseenter={() => hovering = true}
+    on:mouseleave={() => hovering = false} use:link>
     <slot/>
 </a>
 

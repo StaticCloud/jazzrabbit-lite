@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { link } from 'svelte-spa-router'
     import FaHome from 'svelte-icons/fa/FaHome.svelte'
     import FaSearch from 'svelte-icons/fa/FaSearch.svelte'
     import FaBook from 'svelte-icons/fa/FaBook.svelte'
@@ -7,22 +6,21 @@
 
     import NavLink from './NavLink.svelte';
 
-    let activePage = '';
     let currentPage = 'home';
 
 </script>
 
 <nav class="navigation">
-    <NavLink href='/'>
+    <NavLink href='/' page="home" currentPage={currentPage}> 
         <FaHome/>
     </NavLink>
-    <NavLink href='/search'>
+    <NavLink href='/search' page="search" currentPage={currentPage}>
         <FaSearch/>
     </NavLink>
-    <NavLink href='/collection'>
+    <NavLink href='/collection' page="collection" currentPage={currentPage}>
         <FaBook/>
     </NavLink>
-    <NavLink href='/favorites'>
+    <NavLink href='/favorites' page="favorites" currentPage={currentPage}>
         <FaHeart/>
     </NavLink>
 </nav>
@@ -37,6 +35,6 @@
         left: 0;
 
         height: 100vh;
-        background-color: rgb(20, 20, 20);
+        background-color: rgb(22, 22, 22);
     }
 </style>
