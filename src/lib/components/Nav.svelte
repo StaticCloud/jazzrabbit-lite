@@ -4,6 +4,7 @@
     import FaSearch from 'svelte-icons/fa/FaSearch.svelte'
     import FaBook from 'svelte-icons/fa/FaBook.svelte'
     import FaHeart from 'svelte-icons/fa/FaHeart.svelte'
+
 </script>
 
 <nav class="navigation">
@@ -23,11 +24,24 @@
 
 <style>
     a {
-        width: 31px;
-        height: 31px;
+        width: 25px;
+        height: 25px;
 
         color: rgb(235, 159, 88);
-        padding: 25px;
+        padding: 30px;
+        position: relative;
+    }
+
+    .selected-page:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 3px;
+
+        background-color: rgb(235, 159, 88);
     }
 
     .navigation {
@@ -39,6 +53,6 @@
         left: 0;
 
         height: 100vh;
-        background-color: rgb(43, 43, 43);
+        background-color: rgb(20, 20, 20);
     }
 </style>
