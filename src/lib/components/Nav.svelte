@@ -5,45 +5,29 @@
     import FaBook from 'svelte-icons/fa/FaBook.svelte'
     import FaHeart from 'svelte-icons/fa/FaHeart.svelte'
 
+    import NavLink from './NavLink.svelte';
+
+    let activePage = '';
+    let currentPage = 'home';
+
 </script>
 
 <nav class="navigation">
-    <a href="/" use:link>
+    <NavLink href='/'>
         <FaHome/>
-    </a>
-    <a href="/search" use:link>
+    </NavLink>
+    <NavLink href='/search'>
         <FaSearch/>
-    </a>
-    <a href="/collection" use:link>
+    </NavLink>
+    <NavLink href='/collection'>
         <FaBook/>
-    </a>
-    <a href="/favorites" use:link>
+    </NavLink>
+    <NavLink href='/favorites'>
         <FaHeart/>
-    </a>
+    </NavLink>
 </nav>
 
 <style>
-    a {
-        width: 25px;
-        height: 25px;
-
-        color: rgb(235, 159, 88);
-        padding: 30px;
-        position: relative;
-    }
-
-    .selected-page:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 3px;
-
-        background-color: rgb(235, 159, 88);
-    }
-
     .navigation {
         display: flex;
         flex-direction: column;
