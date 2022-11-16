@@ -29,6 +29,7 @@
 
 <style>
   .content-wrap {
-    padding-left: 90px;
+    padding-left: 85px;
+    height: 100vh;
   }
 </style>
