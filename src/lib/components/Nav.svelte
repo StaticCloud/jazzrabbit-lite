@@ -11,16 +11,16 @@
 </script>
 
 <nav class="navigation">
-    <NavLink href='/' page="home" currentPage={currentPage}> 
+    <NavLink href='/' page="home" bind:currentPage={currentPage}> 
         <FaHome/>
     </NavLink>
-    <NavLink href='/search' page="search" currentPage={currentPage}>
+    <NavLink href='/search' page="search" bind:currentPage={currentPage}>
         <FaSearch/>
     </NavLink>
-    <NavLink href='/collection' page="collection" currentPage={currentPage}>
+    <NavLink href='/collection' page="collection" bind:currentPage={currentPage}>
         <FaBook/>
     </NavLink>
-    <NavLink href='/favorites' page="favorites" currentPage={currentPage}>
+    <NavLink href='/favorites' page="favorites" bind:currentPage={currentPage}>
         <FaHeart/>
     </NavLink>
 </nav>

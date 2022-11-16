@@ -11,7 +11,8 @@
     class:active-page="{hovering === true}" 
     class:current-page="{currentPage === page}"
     on:mouseenter={() => hovering = true}
-    on:mouseleave={() => hovering = false} use:link>
+    on:mouseleave={() => hovering = false} 
+    on:click={() => currentPage = page} use:link>
     <slot/>
 </a>
 
@@ -27,19 +28,24 @@
         transition: color 0.5s;
     }
 
-    .active-page {
-        color: rgb(235, 159, 88);
-    }
-
-    .current-page:after {
+    a:after {
         content: "";
         display: block;
         position: absolute;
         top: 0;
         left: 0;
         height: 100%;
-        width: 3px;
+        width: 0px;
 
+        transition: all 0.2s;
         background-color: rgb(235, 159, 88);
+    }
+
+    .active-page {
+        color: rgb(235, 159, 88);
+    }
+
+    .current-page:after {
+        width: 3px;
     }
 </style>
