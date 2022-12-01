@@ -11,6 +11,7 @@
             let { results } = await response.json();
             searchResults = results;
             query = '';
+            console.log(searchResults);
         }
     }
 </script>
