@@ -45,6 +45,11 @@
         color: rgb(235, 159, 88);
     }
 
+    .current-page {
+        color: rgb(235, 159, 88);
+        background-color: rgb(29, 29, 29);
+    }
+
     .current-page:after {
         width: 3px;
     }

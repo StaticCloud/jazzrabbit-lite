@@ -1,21 +1,63 @@
 <script lang="ts">
+    import FaSearch from 'svelte-icons/fa/FaSearch.svelte'
+
     export let searchResults;
     let query: String;
 
     const getMusic = async () => {
-        query = query.split(" ").join("+");
-        let response = await fetch(`https://itunes.apple.com/search?country=US&term=${query}&media=music&entity=album`);
-        let { results } = await response.json();
-        searchResults = results;
-        query = '';
-        console.log(results);
+        if (query) {
+            query = query.split(" ").join("+");
+            let response = await fetch(`https://itunes.apple.com/search?country=US&term=${query}&media=music&entity=album`);
+            let { results } = await response.json();
+            searchResults = results;
+            query = '';
+        }
     }
 </script>
 
 <div>
     <form on:submit|preventDefault={() => getMusic()}>
-        <label for="music-search">Search for music:</label>
-        <input id="music-search" bind:value={query}/>
-        <button type="submit">Submit</button>
+        <input id="music-search" placeholder="Search for albums" bind:value={query}/>
+        <button type="submit"><FaSearch/></button>
     </form>
 </div>
+
+<style>
+    form { 
+        position: relative;
+        display: inline-block;
+    }
+
+    input {
+        background-color: rgb(29, 29, 29);
+        border: none;
+        padding: 20px;
+
+        color: white;
+        border-radius: 70px;
+    }
+
+    input:focus {
+        border-color: rgb(75, 75, 75);
+    }
+
+    button {
+        width: 60px;
+        padding: 20px;
+        display: block;
+
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        right: 0px;
+
+        border-radius: 70px;
+
+        color: white;
+    }
+
+    button:hover {
+        transition: all 0.2s;
+        color: rgb(235, 159, 88);
+    }
+</style>
