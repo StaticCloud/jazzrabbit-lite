@@ -34,6 +34,7 @@
         border: none;
         padding: 20px;
 
+        margin: 20px;
         color: white;
         border-radius: 70px;
     }
@@ -43,14 +44,14 @@
     }
 
     button {
-        width: 60px;
-        padding: 20px;
+        width: 20px;
+        margin: 20px;
         display: block;
 
         top: 0;
         bottom: 0;
         position: absolute;
-        right: 0px;
+        right: 15px;
 
         border-radius: 70px;
 
