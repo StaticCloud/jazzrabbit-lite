@@ -54,7 +54,7 @@
 
         border-radius: 70px;
 
-        color: white;
+        color: rgb(75, 75, 75);
     }
 
     button:hover {
