@@ -13,9 +13,11 @@
     {#each albumData as album}
         <div class="albumWrapper">
             <Album cover={album.artworkUrl100.replace('100x100', '250x250')}></Album>
-            <h3>{album.collectionName}</h3>
+            <div class="titleWrapper">
+                <h3 class="title">{album.collectionName}</h3>
+                <p class="plus"><FaPlus/></p>
+            </div>
             <p class="albumArtist">{album.artistName}</p>
-            <p class="plus"><FaPlus/></p>
         </div>
     {/each}
 {/if}
@@ -26,20 +28,24 @@
         margin: 10px 0;
     }
 
-    .plus {
-        color: rgb(235, 159, 88);
+    .titleWrapper {
+        display: flex;
+        flex-wrap: flex;
+    }
+
+    .title {
         flex: 1;
+    }
+
+    .plus {
+        color: rgb(75, 75, 75);
+        display: block;
         width: 25px;
         height: 25px;
 
-        position: absolute;
-        bottom: 0;
+        margin: 10px 0;
 
-        padding: 10px;
-
-        background-color: rgb(29, 29, 29);
-
-        border-radius: 25px;
+        padding: 5px;
     }
 
     .grid {
@@ -51,8 +57,10 @@
     }
 
     .albumWrapper {
-        position: relative;
+        background-color: rgb(29, 29, 29);
         padding: 10px;
+
+        border-bottom: 3px solid rgb(235, 159, 88);
     }
 
     .albumArtist {
