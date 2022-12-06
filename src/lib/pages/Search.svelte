@@ -10,7 +10,7 @@
 
 <SearchBar bind:searchResults="{albumData}"/>
 {#key albumData}
-    <div class:grid="{albumData}">
+    <div class:grid="{albumData}" class="wrap">
         {#if albumData}
             {#each albumData as album, i}
                 <div class="albumWrapper" in:fly="{{ y: -20, duration: 400, delay: i * 100 }}">
@@ -75,5 +75,9 @@
 
     .albumArtist {
         padding-bottom: 40px;
+    }
+
+    .wrap {
+        overflow-x: hidden;
     }
 </style>
