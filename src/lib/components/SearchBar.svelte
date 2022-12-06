@@ -30,17 +30,12 @@
     }
 
     input {
-        background-color: rgb(29, 29, 29);
+        background-color: white;
         border: none;
-        padding: 20px;
+        padding: 15px;
 
-        margin: 20px 20px 0px 20px;
-        color: white;
+        margin: 25px 25px 0px 25px;
         border-radius: 70px;
-    }
-
-    input:focus {
-        border-color: rgb(75, 75, 75);
     }
 
     button {
@@ -54,12 +49,5 @@
         right: 15px;
 
         border-radius: 70px;
-
-        color: rgb(75, 75, 75);
-    }
-
-    button:hover {
-        transition: all 0.2s;
-        color: rgb(235, 159, 88);
     }
 </style>

@@ -63,7 +63,7 @@
         display: grid;
         gap: 10px;
         grid-row: 1;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     }
 
     .albumWrapper {
