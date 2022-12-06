@@ -1,6 +1,7 @@
 <script>
     let albumData;
 
+    import { fly } from 'svelte/transition';
     import FaPlus from 'svelte-icons/fa/FaPlus.svelte'
 
     import SearchBar from '../components/SearchBar.svelte'
@@ -8,24 +9,31 @@
 </script>
 
 <SearchBar bind:searchResults="{albumData}"/>
-<div class="grid">
-{#if albumData}
-    {#each albumData as album}
-        <div class="albumWrapper">
-            <Album cover={album.artworkUrl100.replace('100x100', '250x250')}></Album>
-            <div class="titleWrapper">
-                <h3 class="title">{album.collectionName}</h3>
-                <p class="plus"><FaPlus/></p>
+<div class:grid="{albumData}">
+    {#if albumData}
+        {#each albumData as album}
+            <div class="albumWrapper">
+                <Album cover={album.artworkUrl100.replace('100x100', '250x250')}></Album>
+                <div class="titleWrapper">
+                    <h3 class="title">{album.collectionName}</h3>
+                    <p class="plus"><FaPlus/></p>
+                </div>
+                <p class="albumArtist">{album.artistName}</p>
             </div>
-            <p class="albumArtist">{album.artistName}</p>
-        </div>
-    {/each}
-{/if}
+        {/each}
+    {:else}
+            <h1 in:fly="{{ x: 50, duration: 500 }}">For example, "David Bowie" or "The Wall"</h1>
+    {/if}
 </div>
 
 <style>
     h3 {
         margin: 10px 0;
+    }
+
+    h1 { 
+        margin: 20px;
+        font-size: 3em;
     }
 
     .titleWrapper {

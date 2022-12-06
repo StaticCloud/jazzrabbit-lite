@@ -34,7 +34,7 @@
         border: none;
         padding: 20px;
 
-        margin: 20px;
+        margin: 20px 20px 0px 20px;
         color: white;
         border-radius: 70px;
     }
@@ -45,7 +45,7 @@
 
     button {
         width: 20px;
-        margin: 20px;
+        margin: 20px 20px 0px 20px;
         display: block;
 
         top: 0;
