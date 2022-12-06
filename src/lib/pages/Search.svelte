@@ -9,22 +9,24 @@
 </script>
 
 <SearchBar bind:searchResults="{albumData}"/>
-<div class:grid="{albumData}">
-    {#if albumData}
-        {#each albumData as album}
-            <div class="albumWrapper">
-                <Album cover={album.artworkUrl100.replace('100x100', '250x250')}></Album>
-                <div class="titleWrapper">
-                    <h3 class="title">{album.collectionName}</h3>
-                    <p class="plus"><FaPlus/></p>
+{#key albumData}
+    <div class:grid="{albumData}">
+        {#if albumData}
+            {#each albumData as album, i}
+                <div class="albumWrapper" in:fly="{{ y: -20, duration: 400, delay: i * 100 }}">
+                    <Album cover={album.artworkUrl100.replace('100x100', '250x250')}></Album>
+                    <div class="titleWrapper">
+                        <h3 class="title">{album.collectionName}</h3>
+                        <p class="plus"><FaPlus/></p>
+                    </div>
+                    <p class="albumArtist">{album.artistName}</p>
                 </div>
-                <p class="albumArtist">{album.artistName}</p>
-            </div>
-        {/each}
-    {:else}
-            <h1 in:fly="{{ x: 50, duration: 500 }}">For example, "David Bowie" or "The Wall"</h1>
-    {/if}
-</div>
+            {/each}
+        {:else}
+                <h1 in:fly="{{ x: 50, duration: 500 }}">For example, "David Bowie" or "The Wall"</h1>
+        {/if}
+    </div>
+{/key}
 
 <style>
     h3 {
