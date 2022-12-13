@@ -58,6 +58,13 @@
         padding: 5px;
     }
 
+    .plus:hover {
+        color: rgb(235, 159, 88);
+        cursor: pointer;
+
+        transition: all 0.2s;
+    }
+
     .grid {
         padding: 25px;
         display: grid;
